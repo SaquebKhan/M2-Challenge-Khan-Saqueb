@@ -79,7 +79,7 @@ public class MathConverterControllerTest {
                         .content(inputAdd)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
-                .andExpect(status().isUnprocessableEntity());
+                .andExpect(status().is4xxClientError());
     }
 
 
@@ -126,7 +126,7 @@ public class MathConverterControllerTest {
                         .content(input)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
-                .andExpect(status().isUnprocessableEntity());
+                .andExpect(status().is4xxClientError());
     }
 
     //    MULTIPLY TESTS
@@ -172,7 +172,7 @@ public class MathConverterControllerTest {
                         .content(input)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
-                .andExpect(status().isUnprocessableEntity());
+                .andExpect(status().is4xxClientError());
     }
 
     //    DIVIDE TESTS
@@ -218,7 +218,7 @@ public class MathConverterControllerTest {
                         .content(input)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
-                .andExpect(status().isUnprocessableEntity());
+                .andExpect(status().is4xxClientError());
     }
 
     @Test

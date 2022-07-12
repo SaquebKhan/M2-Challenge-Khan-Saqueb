@@ -57,6 +57,15 @@ public class ControllerExceptionHandler {
         ResponseEntity<ErrorResponse> responseEntity = new ResponseEntity<>(error, HttpStatus.UNPROCESSABLE_ENTITY);
         return responseEntity;
     }
+    @ExceptionHandler(value = {NullPointerException.class})
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<ErrorResponse> indexOutOfBounds(NullPointerException e) {
+        ErrorResponse error = new ErrorResponse(HttpStatus.UNPROCESSABLE_ENTITY.toString(), e.getMessage());
+        error.setTimestamp(LocalDateTime.now());
+        error.setStatus(HttpStatus.NOT_FOUND.value());
+        ResponseEntity<ErrorResponse> responseEntity = new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+        return responseEntity;
+    }
 
     @ExceptionHandler(value = {MethodArgumentNotValidException.class})
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
