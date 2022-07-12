@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.garner</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>M2-Challenge-Khan-Saqueb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>M2-Challenge-Khan-Saqueb</name>
 	<description>M2 Challenge</description>
