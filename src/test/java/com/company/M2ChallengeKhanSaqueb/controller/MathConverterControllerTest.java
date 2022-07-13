@@ -56,8 +56,8 @@ public class MathConverterControllerTest {
     @Test
     public void addOperandReqNonInt442Error() throws Exception {
         Map<String, String> MathEquation = new HashMap<>();
-        MathEquation.put("operand1", "6");
-        MathEquation.put("operand2", "hotdog");
+        MathEquation.put("operand1", "88");
+        MathEquation.put("operand2", "sonic");
 
         String inputAdd = mapper.writeValueAsString(MathEquation);
 
@@ -71,7 +71,7 @@ public class MathConverterControllerTest {
     @Test
     public void addMissingOperand442Error() throws Exception {
         Map<String, String> MathEquation = new HashMap<>();
-        MathEquation.put("operand1", "6");
+        MathEquation.put("operand1", "3");
 
         String inputAdd = mapper.writeValueAsString(MathEquation);
 
@@ -103,8 +103,8 @@ public class MathConverterControllerTest {
     @Test
     public void subtractOperandReqNonInt442Error() throws Exception {
         Map<String, String> MathEquation = new HashMap<>();
-        MathEquation.put("operand1", "hotdog");
-        MathEquation.put("operand2", "99");
+        MathEquation.put("operand1", "batman");
+        MathEquation.put("operand2", "42");
 
         String inputSubtract = mapper.writeValueAsString(MathEquation);
 
@@ -118,7 +118,7 @@ public class MathConverterControllerTest {
     @Test
     public void subtractMissingOperand442Error() throws Exception {
         Map<String, String> MathEquation = new HashMap<>();
-        MathEquation.put("operand1", "6");
+        MathEquation.put("operand1", "");
 
         String input = mapper.writeValueAsString(MathEquation);
 

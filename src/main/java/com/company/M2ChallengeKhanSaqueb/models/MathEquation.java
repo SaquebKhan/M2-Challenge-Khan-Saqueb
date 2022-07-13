@@ -1,8 +1,6 @@
 package com.company.M2ChallengeKhanSaqueb.models;
 
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.Objects;
 
 public class MathEquation {

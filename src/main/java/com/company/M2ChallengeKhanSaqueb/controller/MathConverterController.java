@@ -3,7 +3,6 @@ package com.company.M2ChallengeKhanSaqueb.controller;
 import com.company.M2ChallengeKhanSaqueb.models.MathEquation;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;

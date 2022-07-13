@@ -1,13 +1,9 @@
 package com.company.M2ChallengeKhanSaqueb.controller;
 
-import com.company.M2ChallengeKhanSaqueb.exceptions.NotFoundException;
 import com.company.M2ChallengeKhanSaqueb.models.Month;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-
-import javax.validation.Valid;
-import javax.websocket.server.PathParam;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -30,7 +26,6 @@ public class MonthlyConverterController {
             new Month(12, "December")
     ));
 
-    //    Get month number
     @GetMapping(value = "/month/{monthNumber}")
     @ResponseStatus(value = HttpStatus.OK)
     public Month getMonthByNum(@PathVariable int monthNumber) {
@@ -42,18 +37,14 @@ public class MonthlyConverterController {
                 break;
             }
             if ((monthNumber > 12 ) || (monthNumber < 0)) {
-                throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "You must enter a Month number between 1-12");
+                throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Month number must be 1-12");
             }
         }
         return monthFound;
     }
-
-    ;
-
-    //    Get random month
     @GetMapping(value = "/randomMonth")
     @ResponseStatus(value = HttpStatus.OK)
-    public Month getRandomMonthByNum() {
+    public Month getRandomMonth() {
 
         Random randomMonthNum = new Random();
         int monthNumGen = randomMonthNum.nextInt(12)+1;
